@@ -10,9 +10,10 @@ const Home = () => {
         'Stuart commented that this was very true.',
         'He made his comments at a news conference in Amsterdam.'
     ]);
+
     return (
         <div>
-            <CommentList comments={comments} title="All Comments"/>
+            <CommentList comments={comments} title="All Comments" />
         </div>
     );
 }
