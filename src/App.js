@@ -8,26 +8,24 @@ import AxiosGetDemo from './componentd/axiosdemo/axiosGetDemo.js'
 import Navbar from './Navbar.js';
 import AxiosPostDemo from './componentd/axiosdemo/axiosPostDemo.js';
 import ToDoList from './componentd/todolist/ToDoList.js';
+import { BrowserRouter as Router , Routes, Route } from 'react-router-dom';
 
 function App() {
-  return (
-    <div className="App">
-      <h2>Hello React</h2>
-      <Hello name = "Joey" lastName = "Sing"/>
-      <Navbar/>
-      <ToDoList />
-      <AxiosGetDemo />
-     
-     
 
-      {/* 
-      <Hello name = "Zoe"/>
-      <EvenDemo />
-      <StateDemo />
-      <Home />
-      <ListandKeysComponents />
-      */}
-    </div>
+  return (
+      <Router>
+      <div className="app">
+        <Navbar/>
+      </div>
+
+       <Routes>
+        <Route path='/hello' element={<Hello/>}/>
+        <Route path='/sdc' element={<StateDemo/>}/>
+        <Route path='/getposts' element={<AxiosGetDemo/>}/>
+        <Route path='/todolist' element={<ToDoList/>}/>
+       </Routes>
+      </Router>
+    
   );
 }
 
